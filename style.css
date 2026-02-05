@@ -29,13 +29,14 @@ body {
 .nav-brand {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 10px;
   color: #f5d0fe;
   font-weight: 600;
 }
 
 .nav-brand img {
-  width: 36px;
+  width: 28px;
+  opacity: 0.9;
 }
 
 .nav-links a {
@@ -52,15 +53,11 @@ body {
 /* Hero */
 
 .hero {
-  padding: 140px 20px 110px;
+  padding: 140px 20px 120px;
   text-align: center;
-  background:
-    radial-gradient(circle at top, #4c1d95 0%, #120018 55%);
-}
-
-.logo {
-  width: 140px;
-  margin-bottom: 28px;
+  background: radial-gradient(circle at top, #4c1d95 0%, #120018 55%);
+  background-size: 200% 200%;
+  animation: gradientShift 14s ease infinite;
 }
 
 .hero h1 {
@@ -72,7 +69,7 @@ body {
 .tagline {
   font-size: 1.25rem;
   color: #d8b4fe;
-  max-width: 720px;
+  max-width: 760px;
   margin: auto;
 }
 
@@ -81,7 +78,7 @@ body {
 main {
   max-width: 1000px;
   margin: auto;
-  padding: 80px 20px;
+  padding: 90px 20px;
 }
 
 /* Cards */
@@ -95,7 +92,20 @@ main {
   border: 1px solid #6b21a8;
   border-radius: 14px;
   padding: 40px;
-  margin-bottom: 45px;
+  margin-bottom: 50px;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease, transform 0.8s ease, border-color 0.3s ease;
+}
+
+.card.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  border-color: #8b5cf6;
 }
 
 .card h2 {
@@ -117,7 +127,7 @@ main {
   margin-bottom: 8px;
 }
 
-/* Highlight section */
+/* Highlight */
 
 .highlight {
   text-align: center;
@@ -128,8 +138,8 @@ main {
 
 .button {
   display: inline-block;
-  margin-top: 10px;
-  padding: 14px 26px;
+  margin-top: 12px;
+  padding: 14px 28px;
   background: #6b21a8;
   color: #ffffff;
   text-decoration: none;
@@ -151,7 +161,7 @@ main {
 
 footer {
   background: #0a0010;
-  padding: 45px 20px;
+  padding: 50px 20px;
   text-align: center;
   border-top: 1px solid #6b21a8;
 }
@@ -170,10 +180,18 @@ footer {
   font-size: 0.9rem;
   color: #d8b4fe;
   max-width: 900px;
-  margin: 18px auto;
+  margin: 20px auto;
 }
 
 .copyright {
   font-size: 0.85rem;
   color: #a78bfa;
+}
+
+/* Background animation */
+
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
 }
