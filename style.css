@@ -56,7 +56,7 @@ body {
 }
 
 .hero-logo {
-  width: 220px;
+  width: 130px;
   filter: drop-shadow(0 0 25px rgba(168, 85, 247, 0.35));
   transition: transform 0.15s ease-out;
 }
@@ -118,3 +118,4 @@ footer {
   color: #c084fc;
   text-decoration: none;
 }
+
